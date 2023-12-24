@@ -20,84 +20,100 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="stylesheets/styles.css" rel="stylesheet" />
-    <!--chart-->>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-style@latest/dist/chartjs-plugin-style.min.js"></script>
+	<!--chart-->>
+	<script src="javascripts/raphael.fillfit.js"></script>
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/pie.js"></script>
 </head>
 
 <body>
 	<!-- Navigation(連至首頁)-->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="index.html#page-top"><img src="images/img/NTOUCGM.svg"
-                    alt="NTOUCGM logo with word" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            社團介紹
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html#services" target="_blank">關於社團</a></li>
-                            <li><a class="dropdown-item" href="index.html#team" target="_blank">幹部介紹</a></li>
-                            <li><a class="dropdown-item" href="index.html#about" target="_blank">社團經歷</a></li>
-                            <li><a class="dropdown-item" href="index.html#articles_of_association" target="_blank">社團章程</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#calendar">活動日程</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            工具
-                        </a>
-                        <ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="index.html#toolkit" target="_blank">工具介紹</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">瑞士制排名計算機</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">線上圓餅圖產生器</a></li>
-                            <li><a class="dropdown-item disabled">社內文章撰寫區</a></li>
-                        </ul>
-                    </li>
+		<div class="container">
+			<a class="navbar-brand" href="index.html#page-top"><img src="images/img/NTOUCGM.svg"
+					alt="NTOUCGM logo with word" /></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				Menu
+				<i class="fas fa-bars ms-1"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 					<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            活動紀錄
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" target="_blank">社內比賽統計</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">校外活動</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            社員文章
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" target="_blank">賽場簡評</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">上位訪談</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							社團介紹
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="index.html#services" target="_blank">關於社團</a></li>
+							<li><a class="dropdown-item" href="index.html#team" target="_blank">幹部介紹</a></li>
+							<li><a class="dropdown-item" href="index.html#about" target="_blank">社團經歷</a></li>
+							<li><a class="dropdown-item" href="index.html#articles_of_association"
+									target="_blank">社團章程</a></li>
+						</ul>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="index.html#calendar">活動日程</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							工具
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="index.html#toolkit" target="_blank">工具介紹</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">瑞士制排名計算機</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">線上圓餅圖產生器</a></li>
+							<li><a class="dropdown-item disabled">社內文章撰寫區</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							活動紀錄
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#" target="_blank">社內比賽統計</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">校外活動</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							社員文章
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#" target="_blank">賽場簡評</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">上位訪談</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<!-- Masthead-->
 	<header class="masthead">
 		<div class="container">
 			<div class="masthead-subheading">NTOUCGM</div>
-			<div class="masthead-heading text-uppercase">部落格</div>
+			<div class="masthead-heading text-uppercase">線上圓餅圖產生器</div>
 			<a class="btn btn-primary btn-xl text-uppercase toolkit-link" data-bs-toggle="modal"
-				href="#IdentityModal">開始撰寫</a>
+				href="#IdentityModal">開始產生</a>
 		</div>
 	</header>
 	<main>
-
-		</script>
+		<section class="page-section" id="services">
+			<div class="container">
+				<div class="text-center">
+					<h2 class="section-heading text-uppercase">圓餅圖範例</h2>
+					<h3 class="section-subheading text-muted"></h3>
+				</div>
+				<div class="row text-center">
+					<div class="container-fluid position-relative" id="holder">
+						<svg xmlns="http://www.w3.org/2000/svg" style="overflow: hidden;">
+						</svg>
+					</div>
+				</div>
+			</div>
+		</section>
+		
 		<!-- Identity Modal popup-->
 		<div class="toolkit-modal modal fade" id="IdentityModal" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
@@ -140,59 +156,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 				</div>
 			</div>
 		</div>
-		<!-- Writeblock Modal popup-->
-		<div class="toolkit-modal modal fade" id="WriteBlockModal" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="close-modal" data-bs-dismiss="modal"><img src="images/img/close-icon.svg"
-							alt="Close modal" /></div>
-					<div class="container">
-						<div class="row justify-content-center ">
-							<div class="col-lg-8">
-								<div class="modal-body">
-									<h2 class="text-uppercase">文章撰寫區塊</h2>
-									<p class="item-intro text-muted" id="showAuthorTitle"></p>
-									<div id="editor"></div>
-									<button class="btn btn-primary btn-xl text-uppercase" id="submit"
-										data-bs-dismiss="modal" type="button">
-										提交
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script src="javascripts/ckeditor.js"></script>
-		<!-- Bootstrap core JS-->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-		<!-- Core theme JS-->
-		<script src="javascripts/scripts.js"></script>
-		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-		<!-- * *                               SB Forms JS                               * *-->
-		<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-		<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-		<script>
-			ClassicEditor
-				.create(document.querySelector('#editor'), {
-					toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
-					heading: {
-						options: [
-							{ model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-							{ model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-							{ model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-						]
-					}
-				})
-				.then(editor => {
-					window.editor = editor;
-				})
-				.catch(err => {
-					console.error(err.stack);
-				});
-		</script>
+
 		<!-- Footer copypasta-->
 		<footer class="footer py-4">
 			<div class="container">
@@ -213,6 +177,15 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 				</div>
 			</div>
 		</footer>
+		    <!-- Bootstrap core JS-->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+			<!-- Core theme JS-->
+			<script src="javascripts/scripts.js"></script>
+			<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+			<!-- * *                               SB Forms JS                               * *-->
+			<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+			<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+			<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 <script type="text/javascript">
 	let author, title;
