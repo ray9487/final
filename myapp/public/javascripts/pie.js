@@ -1,8 +1,3 @@
-var values = [20,26,25,5],
-labels = ["帥哥","酷哥","男同","甲怪"];
-var data=[{values:20,labelsL:"Ruby"},{values:26,labelsL:"JavaScript"},{values:5,labelsL:"Shell"}];
-
-    
 Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
     var paper = this,
         rad = Math.PI / 180,
@@ -26,7 +21,7 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
                 ms = 500,
                 delta = 30,
                 bcolor = Raphael.hsb(start, 1, 1),
-                p = sector(cx, cy, r, angle, angle + angleplus, {fillcenter:`url(images/img/chart/${Math.floor(Math.random()*3)}.jpg)` , stroke: stroke, "stroke-width": 3}),//oringinal color "90-" + bcolor + "-" + color
+                p = sector(cx, cy, r, angle, angle + angleplus, {fillcenter:`url(${Math.floor(Math.random()*3)}.jpg)` , stroke: stroke, "stroke-width": 3}),//oringinal color "90-" + bcolor + "-" + color
                 txt = paper.text(cx + (r + delta + 55) * Math.cos(-popangle * rad), cy + (r + delta + 25) * Math.sin(-popangle * rad), labels[j]).attr({fill: bcolor, stroke: "none", opacity: 0, "font-size": 20});
             p.mouseover(function () {
                 p.stop().animate({transform: "s1.1 1.1 " + cx + " " + cy}, ms, "elastic");//{transform: "s1.1 1.1 " + cx + " " + cy,}
@@ -49,13 +44,13 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
     return chart;
 };
 
-function start() {
-    var width = document.getElementById("holder").clientWidth;
-    Raphael("holder", width, width).pieChart(width/2, 250, 200, values, labels, "#fff000")
-    /*$("tr").each(function () {
+$(function () {
+    var values = [],
+        labels = [];
+    $("tr").each(function () {
         values.push(parseInt($("td", this).text(), 10));
         labels.push($("th", this).text());
     });
-    $("table").hide();*/
-};
-window.addEventListener("load",start);
+    $("table").hide();
+    Raphael("holder", 700, 700).pieChart(350, 350, 200, values, labels, "#fff");
+});

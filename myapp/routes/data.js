@@ -1,27 +1,22 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const router = express.Router();
+// 連接到 MongoDB 資料庫
 mongoose.connect('mongodb://localhost:27017/datadb');
 const db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'Connection fails!'));
 db.once('open', function () {
-    console.log('Connected to database...');
+    console.log('Connected to database...U mother fucker');
 });
 const dataSchema = new mongoose.Schema({
-    author: {
+    myJSON: { //
         type: String,
-        required: true
+        required: true,
     },
-    title: {
-        type: String,
-        required: true
-    },
-    text: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: String,
+    date: { //新增的時間
+        type: Date,
+        default: Date.now,
         required: true
     }
 })
@@ -36,14 +31,14 @@ router.get("/", async (req, res) => {
     }
 });
 router.post("/", async (req, res) => {
-    const data = new Data({
-        thing: req.body.thing,
-        isDone: req.body.isDone,
-    });
+        console.log(req.body.myJSON);
+        console.log(typeof(req.body.myJSON));
+    const data = new Data({myJSON : req.body.myJSON});
     try {
         const newData = await data.save();
         res.status(201).json(newData);
     } catch (err) {
+        
         res.status(400).json({ message: err.message })
     }
 });

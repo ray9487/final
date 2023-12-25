@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="images/logo.ico" />
+    <link rel="icon" type="image/x-icon" href="images/logo.ico" id = "NTOUCGMicon"/>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>    
     <!-- Google fonts-->
@@ -107,8 +107,19 @@
  <!-- Cards Modals-->
  <div id = "cardsModals" aria-hidden="true"></div>
 <script>
-    
-    let testdata = [],
+    let datas = [];
+    $(document).ready(function(){
+        $.get('data',function(data){
+            let obj = JSON.parse(data);
+            console.log(Object.keys(obj));
+            if(Object.hasOwn(obj,"myJSON")){
+                obj += JSON.parse(obj.myJSON);
+                datas += obj;
+            }
+        });
+    });
+    console.log(datas);
+    /*let testdata = [],
         abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     for(let i = 0; i < 26; i ++){
         let obj = {
@@ -118,8 +129,8 @@
 		date: new Date()
         };
         testdata.push(obj);
-    }
-    for(let i in testdata){
+    }*/
+    for(let i in datas){
         document.getElementById("cards").innerHTML += 
         `<div class="col-lg-4 col-sm-6 mb-4">
             <div class="toolkit-item">

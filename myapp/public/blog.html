@@ -10,9 +10,9 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-	<title>文章庫 NTOUCGM 海洋大學卡牌研究社</title>
+	<title>部落格 NTOUCGM 海洋大學卡牌研究社</title>
 	<!-- Favicon-->
-	<link rel="icon" type="image/x-icon" href="images/logo.ico" />
+	<link rel="icon" type="image/x-icon" href="images/logo.ico" id = "NTOUCGMicon"/>
 	<!-- Font Awesome icons (free version)-->
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 	<!-- Google fonts-->
@@ -21,7 +21,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="stylesheets/styles.css" rel="stylesheet" />
 	<!--JQ-->
-	<script src="javascripts/jquery.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -117,6 +117,19 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 											</div>
 										</div>
 										<p class="item-intro text-muted"></p>
+										<div  class="row align-items-start">
+											<div class="col">
+												<input type="radio" id="comment" name="Tag" value="comment" checked />
+												<label for="comment">賽場簡評</label>
+												<input type="radio" id="interview" name="Tag" value="interview"/>
+												<label for="interview">上位訪談</label>
+												<input type="radio" id="statistics" name="Tag" value="statistics"/>
+												<label for="statistics">社內比賽統計</label>
+												<input type="radio" id="event" name="Tag" value="event"/>
+												<label for="event">校外活動</label>
+											</div>
+										</div>
+										<p class="item-intro text-muted"></p>
 										<div class="container">
 											<div class="row justify-content-center ">
 												<div class="col-lg-8">
@@ -124,8 +137,6 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 														<h2 class="text-uppercase">文章撰寫區塊</h2>
 														<p class="item-intro text-muted"></p>
 														<div id="editor"></div>
-
-
 													</div>
 												</div>
 											</div>
@@ -210,26 +221,33 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 		</footer>
 </body>
 <script type="text/javascript">
-	$('#add-data-form').submit(function (event) {
+	/*$('#add-data-form').submit(function (event) {
 				event.preventDefault(); //避免跳頁
 				const thing = $('#thing').val(); 
 				// Property Shorthand: https://javascript.plainenglish.io/object-literals-using-object-property-shorthand-6360825c60ef
 				$.post('todo', { thing }, function (newtodo) {
 					location.reload();                    
 				});
-			});
+			});*/
 
 	function handleSubmit(event) {
 		event.preventDefault();
+		let Tag,elements = document.getElementsByName("Tag");
+		for (let i = 0; i < 4; i++) {//4 is tag amount
+			if (elements.item(i).checked) {
+				Tag = elements.item(i).value;
+			}
+		}
 		let obj = {
 			author: document.getElementById("author").value,
 			title: document.getElementById("title").value,
-			text: editor.getData(),
-			date: new Date()
+			tag:Tag,
+			text: editor.getData()
 		};
 		const myJSON = JSON.stringify(obj);
-		console.log(obj);
+		$.post("data",{myJSON},console.log("trace on"));
 		document.getElementById("close").click();
+		
 	}
 	document.getElementById("article").addEventListener('submit', handleSubmit);
 </script>
