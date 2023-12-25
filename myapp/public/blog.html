@@ -218,14 +218,15 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 		</footer>
 </body>
 <script type="text/javascript">
-	/*$('#add-todo-form').submit(function (event) {
+	$('#add-data-form').submit(function (event) {
 				event.preventDefault(); //避免跳頁
 				const thing = $('#thing').val(); 
 				// Property Shorthand: https://javascript.plainenglish.io/object-literals-using-object-property-shorthand-6360825c60ef
 				$.post('todo', { thing }, function (newtodo) {
 					location.reload();                    
 				});
-			});*/
+			});
+
 	function handleSubmit(event) {
 		event.preventDefault();
 		let obj = {
