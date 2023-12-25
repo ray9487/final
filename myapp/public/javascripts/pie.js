@@ -57,6 +57,5 @@ function start() {
         labels.push($("th", this).text());
     });
     $("table").hide();*/
-    
 };
 window.addEventListener("load",start);

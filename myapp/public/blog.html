@@ -20,70 +20,73 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="stylesheets/styles.css" rel="stylesheet" />
+	<!--JQ-->
+	<script src="javascripts/jquery.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<!-- Navigation(連至首頁)-->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="index.html#page-top"><img src="images/img/NTOUCGM.svg"
-                    alt="NTOUCGM logo with word" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            社團介紹
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html#services" target="_blank">關於社團</a></li>
-                            <li><a class="dropdown-item" href="index.html#team" target="_blank">幹部介紹</a></li>
-                            <li><a class="dropdown-item" href="index.html#about" target="_blank">社團經歷</a></li>
-                            <li><a class="dropdown-item" href="index.html#articles_of_association" target="_blank">社團章程</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#calendar">活動日程</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            工具
-                        </a>
-                        <ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="index.html#toolkit" target="_blank">工具介紹</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">瑞士制排名計算機</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">線上圓餅圖產生器</a></li>
-                            <li><a class="dropdown-item disabled">社內文章撰寫區</a></li>
-                        </ul>
-                    </li>
+		<div class="container">
+			<a class="navbar-brand" href="index.html#page-top"><img src="images/img/NTOUCGM.svg"
+					alt="NTOUCGM logo with word" /></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				Menu
+				<i class="fas fa-bars ms-1"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 					<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            活動紀錄
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" target="_blank">社內比賽統計</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">校外活動</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            社員文章
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" target="_blank">賽場簡評</a></li>
-                            <li><a class="dropdown-item" href="#" target="_blank">上位訪談</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							社團介紹
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="index.html#services" target="_blank">關於社團</a></li>
+							<li><a class="dropdown-item" href="index.html#team" target="_blank">幹部介紹</a></li>
+							<li><a class="dropdown-item" href="index.html#about" target="_blank">社團經歷</a></li>
+							<li><a class="dropdown-item" href="index.html#articles_of_association"
+									target="_blank">社團章程</a></li>
+						</ul>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="index.html#calendar">活動日程</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							工具
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="index.html#toolkit" target="_blank">工具介紹</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">瑞士制排名計算機</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">線上圓餅圖產生器</a></li>
+							<li><a class="dropdown-item disabled">社內文章撰寫區</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							活動紀錄
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#" target="_blank">社內比賽統計</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">校外活動</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							社員文章
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#" target="_blank">賽場簡評</a></li>
+							<li><a class="dropdown-item" href="#" target="_blank">上位訪談</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<!-- Masthead-->
 	<header class="masthead">
 		<div class="container">
@@ -109,28 +112,56 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 									<!-- Project details-->
 									<h2 class="text-uppercase">文章撰寫區塊</h2>
 									<p class="item-intro text-muted"></p>
-									<img class="img-fluid d-block mx-auto" src="images/img/toolkits/write.svg"
-										alt="..." />
 									<p>請輸入身分及標題</p>
-									<ul class="list-inline">
+									<form class="row g-3 was-validated" id="article">
+										<div class="row align-items-start">
+											<div class="col">
+												<label for="author" class="form-label"><strong>作者：</strong></label>
+												<input type="text" class="form-control" id="author" required>
+											</div>
+											<div class="col">
+												<label for="title" class="form-label"><strong>標題：</strong></label>
+												<input type="text" class="form-control" id="title" required>
+											</div>
+										</div>
+										<p class="item-intro text-muted"></p>
+										<div class="container">
+											<div class="row justify-content-center ">
+												<div class="col-lg-8">
+													<div class="modal-body">
+														<h2 class="text-uppercase">文章撰寫區塊</h2>
+														<p class="item-intro text-muted"></p>
+														<div id="editor"></div>
+
+
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<button class="btn btn-primary btn-xl text-uppercase" id="submit"
+											type="submit"><!--data-bs-dismiss="modal" -->
+											提交
+										</button>
+										<button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+											type="button" id = "close">
+											<i class="fas fa-xmark me-1"></i>
+											關閉
+										</button>
+									</form>
+
+									<!--<ul class="list-inline">
 										<li>
-											<strong>作者：</strong>
 											<input type="text" id=author>
+											</strong>
+											
 										</li>
 										<li>
-											<strong>標題：</strong>
-											<input type="text" id=title>
+											<strong></strong>
+											<input type="text" id= >
 										</li>
-									</ul>
-									<button class="btn btn-primary btn-xl text-uppercase" data-bs-toggle="modal"
-										href="#WriteBlockModal" id="AuthorTitle" type="button">
-										開始
-									</button>
-									<button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-										type="button">
-										<i class="fas fa-xmark me-1"></i>
-										關閉
-									</button>
+									</ul-->
+
 								</div>
 							</div>
 						</div>
@@ -138,30 +169,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 				</div>
 			</div>
 		</div>
-		<!-- Writeblock Modal popup-->
-		<div class="toolkit-modal modal fade" id="WriteBlockModal" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="close-modal" data-bs-dismiss="modal"><img src="images/img/close-icon.svg"
-							alt="Close modal" /></div>
-					<div class="container">
-						<div class="row justify-content-center ">
-							<div class="col-lg-8">
-								<div class="modal-body">
-									<h2 class="text-uppercase">文章撰寫區塊</h2>
-									<p class="item-intro text-muted" id="showAuthorTitle"></p>
-									<div id="editor"></div>
-									<button class="btn btn-primary btn-xl text-uppercase" id="submit"
-										data-bs-dismiss="modal" type="button">
-										提交
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<script src="javascripts/ckeditor.js"></script>
 		<!-- Bootstrap core JS-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -200,9 +208,6 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 						Discord：
 						<a class="btn btn-dark btn-social mx-2" href="https://discord.gg/2Uex6MndEh" target="_blank"
 							rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
-						<!--<a class="btn btn-dark btn-social mx-2" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-							<a class="btn btn-dark btn-social mx-2" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-							<a class="btn btn-dark btn-social mx-2" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>-->
 					</div>
 					<div class="col-lg-4 text-lg-end">
 						<a class="link-dark text-decoration-none me-3" href="#">Privacy Policy</a>
@@ -213,28 +218,27 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 		</footer>
 </body>
 <script type="text/javascript">
-	let author, title;
-	function saveAuthorTitle() {
-		author = document.getElementById("author").value;
-		title = document.getElementById("title").value;
-		showAuthorTitle();
-		document.getElementById("submit").addEventListener("click", submit);
-	}
-	function showAuthorTitle() {
-		document.getElementById("showAuthorTitle").innerHTML = `作者：${author}&emsp;標題：${title}`;
-	}
-	function submit() {
+	/*$('#add-todo-form').submit(function (event) {
+				event.preventDefault(); //避免跳頁
+				const thing = $('#thing').val(); 
+				// Property Shorthand: https://javascript.plainenglish.io/object-literals-using-object-property-shorthand-6360825c60ef
+				$.post('todo', { thing }, function (newtodo) {
+					location.reload();                    
+				});
+			});*/
+	function handleSubmit(event) {
+		event.preventDefault();
 		let obj = {
-			author: author,
-			title: title,
+			author: document.getElementById("author").value,
+			title: document.getElementById("title").value,
 			text: editor.getData(),
 			date: new Date()
 		};
-		console.log(obj);
 		const myJSON = JSON.stringify(obj);
-		console.log(myJSON);
+		console.log(obj);
+		document.getElementById("close").click();
 	}
-	document.getElementById("AuthorTitle").addEventListener("click", saveAuthorTitle);
+	document.getElementById("article").addEventListener('submit', handleSubmit);
 </script>
 
 </html>
