@@ -21,9 +21,10 @@
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
     <!--JQ-->
 	<script src="javascripts/jquery.js"></script>
+    
 
 </head>
 <body>
@@ -108,21 +109,13 @@
  <div id = "cardsModals" aria-hidden="true"></div>
 <script type="module">
     let datas = [];
-    /*const datas = [{
-        "_id": "658a63b9b0306a39771b1388",
-        "myJSON": "{\"author\":\"sdsdsd\",\"title\":\"dsdsdsd\",\"tag\":\"comment\",\"text\":\"<p>dsdsdsds</p>\"}",
-        "date": "2023-12-26T05:25:13.815Z",
-        "__v": 0
-    },
-    {
-        "_id": "658a645633a14f46511756f5",
-        "myJSON": "{\"author\":\"sddsd\",\"title\":\"sdsdsd\",\"tag\":\"comment\",\"text\":\"<p>dsdsd</p>\"}",
-        "date": "2023-12-26T05:27:50.261Z",
-        "__v": 0
-    }];*/
-    /*let datas = JSON.parse(myJSON);
-    console.log(JSON.parse(myJSON));*/
-    $.get('data',function(i){datas+=i;});
+    const jsonUrl="http://52.15.231.92:7070/data";
+        $.getJSON(jsonUrl, function (data) {
+            for (let item of data) {
+                console.log(data._id);
+            }
+        });
+    $(window).load($.get('data',function(i){datas+=i;}));
     for(let i in datas){
         let data = JSON.parse(datas[i].myJSON);
         console.log(data);
@@ -182,5 +175,19 @@
         </div>
     </div>`;
     }//<img class="img-fluid d-block mx-auto" src="images/img/article/${也許會有的圖片}" alt="${應該沒有的說明}" />
+    /*const datas = [{
+        "_id": "658a63b9b0306a39771b1388",
+        "myJSON": "{\"author\":\"sdsdsd\",\"title\":\"dsdsdsd\",\"tag\":\"comment\",\"text\":\"<p>dsdsdsds</p>\"}",
+        "date": "2023-12-26T05:25:13.815Z",
+        "__v": 0
+    },
+    {
+        "_id": "658a645633a14f46511756f5",
+        "myJSON": "{\"author\":\"sddsd\",\"title\":\"sdsdsd\",\"tag\":\"comment\",\"text\":\"<p>dsdsd</p>\"}",
+        "date": "2023-12-26T05:27:50.261Z",
+        "__v": 0
+    }];*/
+    /*let datas = JSON.parse(myJSON);
+    console.log(JSON.parse(myJSON));*/
     </script>
 </html>
