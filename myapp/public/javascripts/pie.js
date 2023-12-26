@@ -1,13 +1,11 @@
-var values = [20,26,25,5],
-labels = ["帥哥","酷哥","男同","甲怪"];
-var data=[{values:20,labelsL:"Ruby"},{values:26,labelsL:"JavaScript"},{values:5,labelsL:"Shell"}];
+//let values = [20,26,25,5],labels = ["帥哥","酷哥","男同","甲怪"];
+//var data=[{values:20,labelsL:"Ruby"},{values:26,labelsL:"JavaScript"},{values:5,labelsL:"Shell"}];
     
-Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
+Raphael.fn.pieChart = function (cx, cy, r, values, labels,img, stroke) {
     var paper = this,
         rad = Math.PI / 180,
         chart = this.set();
     function sector(cx, cy, r, startAngle, endAngle, params) {
-        console.log(params.fill);
         var x1 = cx + r * Math.cos(-startAngle * rad),
             x2 = cx + r * Math.cos(-endAngle * rad),
             y1 = cy + r * Math.sin(-startAngle * rad),
@@ -21,11 +19,11 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
             var value = values[j],
                 angleplus = 360 * value / total,
                 popangle = angle + (angleplus / 2),
-                color = Raphael.hsb(start, .75, 1),
+                color = img[j],//Raphael.hsb(start, .75, 1)
                 ms = 500,
                 delta = 30,
                 bcolor = Raphael.hsb(start, 1, 1),
-                p = sector(cx, cy, r, angle, angle + angleplus, {fillcenter:`url(images/img/chart/${Math.floor(Math.random()*3)}.jpg)` , stroke: stroke, "stroke-width": 3}),//oringinal color "90-" + bcolor + "-" + color
+                p = sector(cx, cy, r, angle, angle + angleplus, {fillcenter:`url(${color})` , stroke: stroke, "stroke-width": 3}),//oringinal color "90-" + bcolor + "-" + color images/img/chart/${Math.floor(Math.random()*3)}.jpg
                 txt = paper.text(cx + (r + delta + 55) * Math.cos(-popangle * rad), cy + (r + delta + 25) * Math.sin(-popangle * rad), labels[j]).attr({fill: bcolor, stroke: "none", opacity: 0, "font-size": 20});
             p.mouseover(function () {
                 p.stop().animate({transform: "s1.1 1.1 " + cx + " " + cy}, ms, "elastic");//{transform: "s1.1 1.1 " + cx + " " + cy,}
@@ -49,12 +47,7 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
 };
 function start() {
     var width = document.getElementById("holder").clientWidth;
-    Raphael("holder", width, width).pieChart(width/2, 250, 200, values, labels, "#fff000")
-    /*$("tr").each(function () {
-        values.push(parseInt($("td", this).text(), 10));
-        labels.push($("th", this).text());
-    });
-    $("table").hide();*/
+    Raphael("holder", width, width).pieChart(width/2, 250, 200, values, labels, "#FFFFFF");
+}
 
-};
-window.addEventListener("load",start);
+//window.addEventListener("load",start);
