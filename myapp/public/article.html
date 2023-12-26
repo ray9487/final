@@ -23,7 +23,7 @@
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <!--JQ-->
-	<script src="javascripts/jquery.js" crossorigin="anonymous"></script>
+	<script src="javascripts/jquery.js"></script>
 
 </head>
 <body>
@@ -106,20 +106,26 @@
 </footer>
  <!-- Cards Modals-->
  <div id = "cardsModals" aria-hidden="true"></div>
-<script>
+<script type="module">
     let datas = [];
-    $(document).ready(function(){
-        $.get('data',function(data){
-            let obj = JSON.parse(data);
-            console.log(Object.keys(obj));
-            if(Object.hasOwn(obj,"myJSON")){
-                obj += JSON.parse(obj.myJSON);
-                datas += obj;
-            }
-        });
-    });
-    console.log(datas);
+    /*const datas = [{
+        "_id": "658a63b9b0306a39771b1388",
+        "myJSON": "{\"author\":\"sdsdsd\",\"title\":\"dsdsdsd\",\"tag\":\"comment\",\"text\":\"<p>dsdsdsds</p>\"}",
+        "date": "2023-12-26T05:25:13.815Z",
+        "__v": 0
+    },
+    {
+        "_id": "658a645633a14f46511756f5",
+        "myJSON": "{\"author\":\"sddsd\",\"title\":\"sdsdsd\",\"tag\":\"comment\",\"text\":\"<p>dsdsd</p>\"}",
+        "date": "2023-12-26T05:27:50.261Z",
+        "__v": 0
+    }];*/
+    /*let datas = JSON.parse(myJSON);
+    console.log(JSON.parse(myJSON));*/
+    $.get('data',function(i){datas+=i;});
     for(let i in datas){
+        let data = JSON.parse(datas[i].myJSON);
+        console.log(data);
         document.getElementById("cards").innerHTML += 
         `<div class="col-lg-4 col-sm-6 mb-4">
             <div class="toolkit-item">
@@ -133,8 +139,8 @@
                     </div>
                     <img class="img-fluid d-block mx-auto" src="images/logo.ico" alt="NTOUCGM LOGO" />
                     <div class="toolkit-caption">
-                        <div class="toolkit-caption-heading">${testdata[i].title}</div>
-                        <div class="toolkit-caption-subheading text-muted">${testdata[i].author}</div>
+                        <div class="toolkit-caption-heading">${data.title}</div>
+                        <div class="toolkit-caption-subheading text-muted">${data.author}</div>
                     </div>
                  </a>
             </div>
@@ -150,19 +156,19 @@
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 
-                                <h2 class="text-uppercase">${testdata[i].title}</h2>
+                                <h2 class="text-uppercase">${data.title}</h2>
                                 <p class="item-intro text-muted">
                                     <div class="row align-items-start">
                                         <div class="col">
-                                            作者：${testdata[i].author}
+                                            作者：${data.author}
                                         </div>
                                         <div class="col">
-                                            日期：${testdata[i].date}
+                                            日期：${datas[i].date}
 									    </div>
 								    </div>    
                                 </p>
                                 
-                                <p>${testdata[i].text}</p>
+                                <p>${data.text}</p>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
                                     type="button">
                                     <i class="fas fa-xmark me-1"></i>
